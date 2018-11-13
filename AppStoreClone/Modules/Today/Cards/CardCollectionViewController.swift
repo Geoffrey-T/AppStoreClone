@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CardCollectionDelegate: class {
-    func cardSelected(frame: CGRect)
+    func cardSelected(cell: BaseCardCell)
 }
 
 class CardCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -55,8 +55,8 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: ArticleCardCell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.articleCard.identifier,
-                                                                             for: indexPath) as? ArticleCardCell else {
+        guard let cell: AppCardCell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.appCard.identifier,
+                                                                             for: indexPath) as? AppCardCell else {
             fatalError("Unknow reusable cell!") // Should never happened
         }
         
@@ -96,8 +96,8 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
     // MARK: - UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) {
-            delegate?.cardSelected(frame: cell.frame)
+        if let cell = collectionView.cellForItem(at: indexPath) as? BaseCardCell {
+            delegate?.cardSelected(cell: cell)
         }
     }
 }

@@ -13,16 +13,17 @@ class BaseCardCell: UICollectionViewCell {
     private var cornerRadius: CGFloat = 20.0
     private var fillColor: UIColor = .gray
 
+    var disabledHighlightedAnimation = false
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         backgroundColor = UIColor.clear
-        self.layer.masksToBounds = false
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        layer.cornerRadius = cornerRadius
+        //layer.cornerRadius = cornerRadius
 
         if shadowLayer == nil {
             shadowLayer = CAShapeLayer()
@@ -39,5 +40,14 @@ class BaseCardCell: UICollectionViewCell {
 
             layer.insertSublayer(shadowLayer, at: 0)
         }
+    }
+
+    func freezeAnimations() {
+        disabledHighlightedAnimation = true
+        layer.removeAllAnimations()
+    }
+
+    func unfreezeAnimations() {
+        disabledHighlightedAnimation = false
     }
 }

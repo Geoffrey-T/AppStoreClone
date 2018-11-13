@@ -14,6 +14,8 @@ class TodayViewController: UIViewController {
         static let embeddedCardCollection = "CardCollection"
     }
 
+    private var transition: Transition?
+
     var cardCollectionViewController: CardCollectionViewController?
 
     override func viewDidLoad() {
@@ -29,7 +31,40 @@ class TodayViewController: UIViewController {
 }
 
 extension TodayViewController: CardCollectionDelegate {
-    func cardSelected(frame: CGRect) {
-        performSegue(withIdentifier: Segues.presentCard, sender: self)
+    func cardSelected(cell: BaseCardCell) {
+        cell.freezeAnimations()
+
+        let currentCellFrame = cell.layer.presentation()!.frame
+
+        let cardPresentationFrameOnScreen = cell.superview!.convert(currentCellFrame, to: nil)
+
+        let cardFrameWithoutTransform = { () -> CGRect in
+            let center = cell.center
+            let size = cell.bounds.size
+            let r = CGRect(
+                x: center.x - size.width / 2,
+                y: center.y - size.height / 2,
+                width: size.width,
+                height: size.height
+            )
+            return cell.superview!.convert(r, to: nil)
+        }()
+
+        //let cardModel = cardModels[indexPath.row]
+
+        let detailVc = storyboard!.instantiateViewController(withIdentifier: "cardDetailVc") as! CardDetailViewController
+
+        let params = Transition.Params(fromCardFrame: cardPresentationFrameOnScreen,
+                                       fromCardFrameWithoutTransform: cardFrameWithoutTransform,
+                                       fromCell: cell)
+        transition = Transition(params: params)
+        detailVc.transitioningDelegate = transition
+
+        detailVc.modalPresentationCapturesStatusBarAppearance = true
+        detailVc.modalPresentationStyle = .custom
+
+        present(detailVc, animated: true, completion: { [unowned cell] in
+            cell.unfreezeAnimations()
+        })
     }
 }
