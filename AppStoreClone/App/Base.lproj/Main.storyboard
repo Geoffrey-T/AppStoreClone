@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Aob-m6-3UO"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Games" id="1ha-o4-p6x"/>
+                    <tabBarItem key="tabBarItem" title="Games" image="games" id="1ha-o4-p6x"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ois-Y5-X9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -95,7 +95,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SNs-pL-8tC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today" id="Ish-sI-7im"/>
+                    <tabBarItem key="tabBarItem" title="Today" image="today" id="Ish-sI-7im"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLO-i6-2ga" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,7 +157,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="mif-cv-JhB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Apps" id="9OC-2a-sjG"/>
+                    <tabBarItem key="tabBarItem" title="Apps" image="apps" id="9OC-2a-sjG"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMe-hX-Wz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,7 +173,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XmU-Gf-rKR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Updates" id="T0h-J1-uns"/>
+                    <tabBarItem key="tabBarItem" title="Updates" image="updates" id="T0h-J1-uns"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KV9-Vd-bEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,7 +189,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="K4i-Xs-AQc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" id="h1W-sS-r3C"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search" id="h1W-sS-r3C"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2T-vN-hGf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -197,6 +197,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="apps" width="25" height="25"/>
         <image name="clear" width="1" height="1"/>
+        <image name="games" width="25" height="25"/>
+        <image name="search" width="25" height="25"/>
+        <image name="today" width="25" height="25"/>
+        <image name="updates" width="25" height="25"/>
     </resources>
 </document>

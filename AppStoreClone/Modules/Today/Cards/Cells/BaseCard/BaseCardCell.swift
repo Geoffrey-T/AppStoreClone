@@ -22,6 +22,7 @@ class BaseCardCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        layer.cornerRadius = cornerRadius
 
         if shadowLayer == nil {
             shadowLayer = CAShapeLayer()
