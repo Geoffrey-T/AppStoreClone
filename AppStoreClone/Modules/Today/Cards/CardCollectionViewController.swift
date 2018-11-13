@@ -74,7 +74,7 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     private func cardCellWidth() -> CGFloat {
-        return (collectionView.bounds.width / 3) * 2
+        return ((collectionView.bounds.width / 3) * 2) - 20 // TODO : Remove random 20 value
     }
     
     private func condensedCardCellWidth() -> CGFloat {
