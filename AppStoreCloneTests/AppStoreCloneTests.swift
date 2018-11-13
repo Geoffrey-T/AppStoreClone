@@ -19,16 +19,23 @@ class AppStoreCloneTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testGetAppInfo() {
+        let client = ApptweakClient(token: "mq0mYVBzALIaZKCpbxlamir-mp0")
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let expectation = self.expectation(description: "AppInfo Request")
+
+        client.get(AppInfoRequest(appId: 454638411), completion: { response in
+            switch response {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+            expectation.fulfill()
+        })
+
+        waitForExpectations(timeout: 10) { _ in
+            print("timeout")
         }
     }
-
 }
