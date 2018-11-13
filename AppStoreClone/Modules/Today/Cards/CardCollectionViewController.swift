@@ -8,8 +8,9 @@
 
 import UIKit
 
-class CardCollectionViewController: UICollectionViewController {
+class CardCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     struct Cell {
+        static let height: CGFloat = 400.0
         struct articleCard {
             static let identifier = "ArticleCardCell"
             static let xib = String(describing: ArticleCardCell.self)
@@ -49,5 +50,41 @@ class CardCollectionViewController: UICollectionViewController {
         }
         
         return cell
+    }
+    
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return cellWidth(index: indexPath.item)
+    }
+    
+    private func cellWidth(index: Int) -> CGSize {
+        guard UIDevice.current.userInterfaceIdiom != .phone else {
+            return CGSize(width: collectionView.bounds.width, height: Cell.height)
+        }
+        
+        let rowIsPair = ((index / 2) % 2) > 0
+        let isFirst = (index+1) % 2 > 0
+        
+        let width = (!rowIsPair && isFirst) || (rowIsPair && !isFirst) ? cardCellWidth() : condensedCardCellWidth()
+
+        return CGSize(width: width, height: Cell.height)
+    }
+    
+    private func cardCellWidth() -> CGFloat {
+        return (collectionView.bounds.width / 3) * 2
+    }
+    
+    private func condensedCardCellWidth() -> CGFloat {
+        return collectionView.bounds.width / 3
+    }
+
+
+    // MARK: - UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // TO DO: HANDLE Touch to present detail
     }
 }
