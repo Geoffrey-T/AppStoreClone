@@ -10,7 +10,13 @@ import UIKit
 
 class CardCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     struct Cell {
+        static let margin: CGFloat = 20.0
         static let height: CGFloat = 400.0
+
+        static var totalMargin: CGFloat {
+            return margin * 2
+        }
+
         struct articleCard {
             static let identifier = "ArticleCardCell"
             static let xib = String(describing: ArticleCardCell.self)
@@ -62,7 +68,7 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
     
     private func cellWidth(index: Int) -> CGSize {
         guard UIDevice.current.userInterfaceIdiom != .phone else {
-            return CGSize(width: collectionView.bounds.width, height: Cell.height)
+            return CGSize(width: collectionView.bounds.width - Cell.totalMargin, height: Cell.height)
         }
         
         let rowIsPair = ((index / 2) % 2) > 0
@@ -74,11 +80,11 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     private func cardCellWidth() -> CGFloat {
-        return ((collectionView.bounds.width / 3) * 2) - 20 // TODO : Remove random 20 value
+        return ((collectionView.bounds.width / 3) * 2) - Cell.totalMargin
     }
     
     private func condensedCardCellWidth() -> CGFloat {
-        return collectionView.bounds.width / 3
+        return collectionView.bounds.width / 3  - Cell.totalMargin
     }
 
 

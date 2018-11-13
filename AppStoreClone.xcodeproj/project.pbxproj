@@ -26,6 +26,7 @@
 		2CC6A014219A3CA700173727 /* CollectionView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6A013219A3CA700173727 /* CollectionView+extension.swift */; };
 		8F282AE8219AC9E0004FFE6A /* ApptweakClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AE7219AC9E0004FFE6A /* ApptweakClient.swift */; };
 		8F282AEA219ADADE004FFE6A /* ApptweakRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AE9219ADADE004FFE6A /* ApptweakRequest.swift */; };
+		8F282AEE219B035A004FFE6A /* BlurredTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AED219B035A004FFE6A /* BlurredTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		2CC6A013219A3CA700173727 /* CollectionView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+extension.swift"; sourceTree = "<group>"; };
 		8F282AE7219AC9E0004FFE6A /* ApptweakClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptweakClient.swift; sourceTree = "<group>"; };
 		8F282AE9219ADADE004FFE6A /* ApptweakRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptweakRequest.swift; sourceTree = "<group>"; };
+		8F282AED219B035A004FFE6A /* BlurredTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		2CC69FC7219A174600173727 /* AppStoreClone */ = {
 			isa = PBXGroup;
 			children = (
+				8F282AEC219B0334004FFE6A /* UI */,
 				2CC69FFA219A282700173727 /* App */,
 				2CC69FF9219A281000173727 /* Helpers */,
 				2CC69FF8219A280800173727 /* Services */,
@@ -255,6 +258,14 @@
 			path = AppCard;
 			sourceTree = "<group>";
 		};
+		8F282AEC219B0334004FFE6A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8F282AED219B035A004FFE6A /* BlurredTabBar.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,6 +382,7 @@
 				2CC69FF5219A27E700173727 /* UpdatesViewController.swift in Sources */,
 				2CC6A014219A3CA700173727 /* CollectionView+extension.swift in Sources */,
 				8F282AE8219AC9E0004FFE6A /* ApptweakClient.swift in Sources */,
+				8F282AEE219B035A004FFE6A /* BlurredTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

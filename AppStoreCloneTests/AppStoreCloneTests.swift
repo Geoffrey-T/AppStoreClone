@@ -20,6 +20,7 @@ class AppStoreCloneTests: XCTestCase {
     }
 
     func testGetAppInfo() {
+        // /!\ TODO: REMOVE THIS API KEY ! Repository is public, so put it in a no-tracking config file
         let client = ApptweakClient(token: "mq0mYVBzALIaZKCpbxlamir-mp0")
 
         let expectation = self.expectation(description: "AppInfo Request")
