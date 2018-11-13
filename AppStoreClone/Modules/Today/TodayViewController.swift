@@ -9,22 +9,27 @@
 import UIKit
 
 class TodayViewController: UIViewController {
+    struct Segues {
+        static let presentCard = "presentCard"
+        static let embeddedCardCollection = "CardCollection"
+    }
+
+    var cardCollectionViewController: CardCollectionViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == Segues.embeddedCardCollection {
+            cardCollectionViewController = segue.destination as? CardCollectionViewController
+            cardCollectionViewController?.delegate = self
+        }
     }
-    */
+}
 
+extension TodayViewController: CardCollectionDelegate {
+    func cardSelected(frame: CGRect) {
+        performSegue(withIdentifier: Segues.presentCard, sender: self)
+    }
 }

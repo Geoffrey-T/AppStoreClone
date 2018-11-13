@@ -27,6 +27,9 @@
 		8F282AE8219AC9E0004FFE6A /* ApptweakClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AE7219AC9E0004FFE6A /* ApptweakClient.swift */; };
 		8F282AEA219ADADE004FFE6A /* ApptweakRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AE9219ADADE004FFE6A /* ApptweakRequest.swift */; };
 		8F282AEE219B035A004FFE6A /* BlurredTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AED219B035A004FFE6A /* BlurredTabBar.swift */; };
+		8F282AF0219B391C004FFE6A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AEF219B391C004FFE6A /* HeaderView.swift */; };
+		8F282AF3219B3ADA004FFE6A /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F282AF2219B3ADA004FFE6A /* HeaderView.xib */; };
+		8F282AF5219B61CA004FFE6A /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AF4219B61CA004FFE6A /* CardDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,9 @@
 		8F282AE7219AC9E0004FFE6A /* ApptweakClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptweakClient.swift; sourceTree = "<group>"; };
 		8F282AE9219ADADE004FFE6A /* ApptweakRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptweakRequest.swift; sourceTree = "<group>"; };
 		8F282AED219B035A004FFE6A /* BlurredTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredTabBar.swift; sourceTree = "<group>"; };
+		8F282AEF219B391C004FFE6A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8F282AF2219B3ADA004FFE6A /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		8F282AF4219B61CA004FFE6A /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,7 @@
 		2CC69FFB219A287900173727 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				8F282AF4219B61CA004FFE6A /* CardDetailViewController.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -261,9 +268,19 @@
 		8F282AEC219B0334004FFE6A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				8F282AF1219B3AC7004FFE6A /* Header */,
 				8F282AED219B035A004FFE6A /* BlurredTabBar.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		8F282AF1219B3AC7004FFE6A /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				8F282AEF219B391C004FFE6A /* HeaderView.swift */,
+				8F282AF2219B3ADA004FFE6A /* HeaderView.xib */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +367,7 @@
 				2CC6A012219A349200173727 /* ArticleCardCell.xib in Resources */,
 				2CC69FD3219A174700173727 /* LaunchScreen.storyboard in Resources */,
 				2CC69FD0219A174700173727 /* Assets.xcassets in Resources */,
+				8F282AF3219B3ADA004FFE6A /* HeaderView.xib in Resources */,
 				2CC6A00E219A32D100173727 /* AppCardCell.xib in Resources */,
 				2CC69FCE219A174600173727 /* Main.storyboard in Resources */,
 			);
@@ -374,11 +392,13 @@
 				2CC69FF1219A27CE00173727 /* GamesViewController.swift in Sources */,
 				2CC6A007219A321100173727 /* BaseCardCell.swift in Sources */,
 				8F282AEA219ADADE004FFE6A /* ApptweakRequest.swift in Sources */,
+				8F282AF5219B61CA004FFE6A /* CardDetailViewController.swift in Sources */,
 				2CC69FF7219A27F900173727 /* SearchViewController.swift in Sources */,
 				2CC69FF3219A27DD00173727 /* AppsViewController.swift in Sources */,
 				2CC69FC9219A174600173727 /* AppDelegate.swift in Sources */,
 				2CC69FEB219A276500173727 /* TodayViewController.swift in Sources */,
 				2CC6A011219A349200173727 /* ArticleCardCell.swift in Sources */,
+				8F282AF0219B391C004FFE6A /* HeaderView.swift in Sources */,
 				2CC69FF5219A27E700173727 /* UpdatesViewController.swift in Sources */,
 				2CC6A014219A3CA700173727 /* CollectionView+extension.swift in Sources */,
 				8F282AE8219AC9E0004FFE6A /* ApptweakClient.swift in Sources */,

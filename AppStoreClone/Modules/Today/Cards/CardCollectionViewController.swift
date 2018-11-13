@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol CardCollectionDelegate: class {
+    func cardSelected(frame: CGRect)
+}
+
 class CardCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     struct Cell {
         static let margin: CGFloat = 20.0
@@ -25,9 +29,10 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
             static let identifier = "AppCardCell"
             static let xib = String(describing: AppCardCell.self)
         }
-        
     }
-    
+
+    public weak var delegate: CardCollectionDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -91,6 +96,8 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
     // MARK: - UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TO DO: HANDLE Touch to present detail
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            delegate?.cardSelected(frame: cell.frame)
+        }
     }
 }
