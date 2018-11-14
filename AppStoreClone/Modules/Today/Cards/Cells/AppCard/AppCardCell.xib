@@ -19,47 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAF-Rp-uxq">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAF-Rp-uxq" customClass="ContentCardView" customModule="AppStoreClone" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="kUq-1F-OBg">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORLD PREMIERE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dT9-ax-RBZ">
-                                <rect key="frame" x="16" y="16" width="157.5" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Art Of The Impossible" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcn-ea-mML">
-                                <rect key="frame" x="16" y="49.5" width="200" height="118.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="WA9-ez-cwy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inside the extraordinary world of Monument Valley 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTH-ww-pKC">
-                                <rect key="frame" x="16" y="343" width="368" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="dT9-ax-RBZ" firstAttribute="top" secondItem="TJ2-DK-1Ff" secondAttribute="top" constant="16" id="GHZ-8Y-r83"/>
-                            <constraint firstItem="Tcn-ea-mML" firstAttribute="top" secondItem="dT9-ax-RBZ" secondAttribute="bottom" constant="12" id="Jx8-At-uDc"/>
-                            <constraint firstItem="TJ2-DK-1Ff" firstAttribute="trailing" secondItem="JTH-ww-pKC" secondAttribute="trailing" constant="16" id="Vc8-ZU-zeR"/>
-                            <constraint firstItem="TJ2-DK-1Ff" firstAttribute="bottom" secondItem="JTH-ww-pKC" secondAttribute="bottom" constant="16" id="W2W-CM-HCq"/>
-                            <constraint firstItem="dT9-ax-RBZ" firstAttribute="leading" secondItem="TJ2-DK-1Ff" secondAttribute="leading" constant="16" id="WeL-ww-I2G"/>
-                            <constraint firstItem="kUq-1F-OBg" firstAttribute="leading" secondItem="wAF-Rp-uxq" secondAttribute="leading" id="crL-Iq-Hri"/>
-                            <constraint firstAttribute="trailing" secondItem="kUq-1F-OBg" secondAttribute="trailing" id="dtP-1O-ofW"/>
-                            <constraint firstAttribute="bottom" secondItem="kUq-1F-OBg" secondAttribute="bottom" id="gPC-yS-EX5"/>
-                            <constraint firstItem="JTH-ww-pKC" firstAttribute="leading" secondItem="TJ2-DK-1Ff" secondAttribute="leading" constant="16" id="rIT-dF-TNP"/>
-                            <constraint firstItem="kUq-1F-OBg" firstAttribute="top" secondItem="wAF-Rp-uxq" secondAttribute="top" id="v99-l3-K2O"/>
-                            <constraint firstItem="Tcn-ea-mML" firstAttribute="leading" secondItem="TJ2-DK-1Ff" secondAttribute="leading" constant="16" id="zeV-Qi-vWm"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="TJ2-DK-1Ff"/>
                     </view>
                 </subviews>
@@ -72,15 +33,8 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="backgroundImage" destination="kUq-1F-OBg" id="FEX-DM-XDq"/>
                 <outlet property="containerView" destination="wAF-Rp-uxq" id="jIp-Vi-vrq"/>
-                <outlet property="descriptionLabel" destination="JTH-ww-pKC" id="fSD-mn-yAb"/>
-                <outlet property="subjectLabel" destination="dT9-ax-RBZ" id="sOR-hl-zca"/>
-                <outlet property="titleLabel" destination="Tcn-ea-mML" id="EVb-aB-nro"/>
             </connections>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="cardBackground" width="675" height="900"/>
-    </resources>
 </document>

@@ -28,7 +28,8 @@
 		8F196652219B7E9600A0D0C7 /* PresentCardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F196651219B7E9600A0D0C7 /* PresentCardAnimator.swift */; };
 		8F196654219B806F00A0D0C7 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F196653219B806F00A0D0C7 /* UIView+extension.swift */; };
 		8F196656219B824500A0D0C7 /* CardPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F196655219B824500A0D0C7 /* CardPresentationController.swift */; };
-		8F196658219B933100A0D0C7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F196657219B933100A0D0C7 /* RootViewController.swift */; };
+		8F19665B219B9ACA00A0D0C7 /* ContentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19665A219B9ACA00A0D0C7 /* ContentCardView.swift */; };
+		8F19665D219B9B2A00A0D0C7 /* ContentCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F19665C219B9B2A00A0D0C7 /* ContentCardView.xib */; };
 		8F282AE8219AC9E0004FFE6A /* ApptweakClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AE7219AC9E0004FFE6A /* ApptweakClient.swift */; };
 		8F282AEA219ADADE004FFE6A /* ApptweakRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AE9219ADADE004FFE6A /* ApptweakRequest.swift */; };
 		8F282AEE219B035A004FFE6A /* BlurredTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AED219B035A004FFE6A /* BlurredTabBar.swift */; };
@@ -73,7 +74,8 @@
 		8F196651219B7E9600A0D0C7 /* PresentCardAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentCardAnimator.swift; sourceTree = "<group>"; };
 		8F196653219B806F00A0D0C7 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		8F196655219B824500A0D0C7 /* CardPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPresentationController.swift; sourceTree = "<group>"; };
-		8F196657219B933100A0D0C7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		8F19665A219B9ACA00A0D0C7 /* ContentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardView.swift; sourceTree = "<group>"; };
+		8F19665C219B9B2A00A0D0C7 /* ContentCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCardView.xib; sourceTree = "<group>"; };
 		8F282AE7219AC9E0004FFE6A /* ApptweakClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptweakClient.swift; sourceTree = "<group>"; };
 		8F282AE9219ADADE004FFE6A /* ApptweakRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptweakRequest.swift; sourceTree = "<group>"; };
 		8F282AED219B035A004FFE6A /* BlurredTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredTabBar.swift; sourceTree = "<group>"; };
@@ -160,7 +162,6 @@
 				2CC69FED219A279100173727 /* Apps */,
 				2CC69FEF219A27AA00173727 /* Updates */,
 				2CC69FEE219A27A400173727 /* Search */,
-				8F196657219B933100A0D0C7 /* RootViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -245,6 +246,7 @@
 		2CC69FFF219A31C300173727 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8F196659219B9AB100A0D0C7 /* ContentCard */,
 				2CC6A004219A31EF00173727 /* BaseCard */,
 				2CC6A00A219A32AF00173727 /* AppCard */,
 				2CC6A009219A32A700173727 /* ArticleCard */,
@@ -286,6 +288,15 @@
 				8F196655219B824500A0D0C7 /* CardPresentationController.swift */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		8F196659219B9AB100A0D0C7 /* ContentCard */ = {
+			isa = PBXGroup;
+			children = (
+				8F19665A219B9ACA00A0D0C7 /* ContentCardView.swift */,
+				8F19665C219B9B2A00A0D0C7 /* ContentCardView.xib */,
+			);
+			path = ContentCard;
 			sourceTree = "<group>";
 		};
 		8F282AEC219B0334004FFE6A /* UI */ = {
@@ -389,6 +400,7 @@
 			files = (
 				2CC6A012219A349200173727 /* ArticleCardCell.xib in Resources */,
 				2CC69FD3219A174700173727 /* LaunchScreen.storyboard in Resources */,
+				8F19665D219B9B2A00A0D0C7 /* ContentCardView.xib in Resources */,
 				2CC69FD0219A174700173727 /* Assets.xcassets in Resources */,
 				8F282AF3219B3ADA004FFE6A /* HeaderView.xib in Resources */,
 				2CC6A00E219A32D100173727 /* AppCardCell.xib in Resources */,
@@ -427,7 +439,7 @@
 				2CC6A011219A349200173727 /* ArticleCardCell.swift in Sources */,
 				8F282AF0219B391C004FFE6A /* HeaderView.swift in Sources */,
 				2CC69FF5219A27E700173727 /* UpdatesViewController.swift in Sources */,
-				8F196658219B933100A0D0C7 /* RootViewController.swift in Sources */,
+				8F19665B219B9ACA00A0D0C7 /* ContentCardView.swift in Sources */,
 				2CC6A014219A3CA700173727 /* CollectionView+extension.swift in Sources */,
 				8F282AE8219AC9E0004FFE6A /* ApptweakClient.swift in Sources */,
 				8F282AEE219B035A004FFE6A /* BlurredTabBar.swift in Sources */,
