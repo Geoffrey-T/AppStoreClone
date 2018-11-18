@@ -30,7 +30,7 @@ public struct ApptweakReponse<Response: Decodable>: Decodable {
     public let status: String?
 
     /// Requested data
-    public let data: Response?
+    public let content: Response?
 }
 
 class ApptweakClient {
@@ -61,7 +61,7 @@ class ApptweakClient {
                 if let data = data {
                     do {
                         let response = try JSONDecoder().decode(ApptweakReponse<T.Response>.self, from: data)
-                        if let data = response.data {
+                        if let data = response.content {
                             completion(.success(data))
                         } else {
                             completion(.failure(Errors.decodeResponse))

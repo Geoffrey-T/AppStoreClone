@@ -6,15 +6,6 @@
 //  Copyright © 2018 ws. All rights reserved.
 //
 
-
-public struct AppInfo: Decodable {
-    public let id: Int
-
-    enum CodingKeys: String, CodingKey {
-        case id = "application_id"
-    }
-}
-
 public struct AppInfoRequest: Request {
     public typealias Response = AppInfo
 
