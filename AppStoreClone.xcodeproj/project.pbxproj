@@ -37,6 +37,7 @@
 		8F282AF0219B391C004FFE6A /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AEF219B391C004FFE6A /* HeaderView.swift */; };
 		8F282AF3219B3ADA004FFE6A /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F282AF2219B3ADA004FFE6A /* HeaderView.xib */; };
 		8F282AF5219B61CA004FFE6A /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AF4219B61CA004FFE6A /* CardDetailViewController.swift */; };
+		8F3C03C521A1FDF300F8F1DD /* DismissCardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C03C421A1FDF300F8F1DD /* DismissCardAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		8F282AEF219B391C004FFE6A /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		8F282AF2219B3ADA004FFE6A /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		8F282AF4219B61CA004FFE6A /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		8F3C03C421A1FDF300F8F1DD /* DismissCardAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissCardAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +289,7 @@
 				8F19664E219B7B9600A0D0C7 /* Transition.swift */,
 				8F196651219B7E9600A0D0C7 /* PresentCardAnimator.swift */,
 				8F196655219B824500A0D0C7 /* CardPresentationController.swift */,
+				8F3C03C421A1FDF300F8F1DD /* DismissCardAnimator.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				8F196652219B7E9600A0D0C7 /* PresentCardAnimator.swift in Sources */,
 				8F19664F219B7B9600A0D0C7 /* Transition.swift in Sources */,
 				8F19665F219C152D00A0D0C7 /* ApptweakObjects.swift in Sources */,
+				8F3C03C521A1FDF300F8F1DD /* DismissCardAnimator.swift in Sources */,
 				8F282AEA219ADADE004FFE6A /* ApptweakRequest.swift in Sources */,
 				8F282AF5219B61CA004FFE6A /* CardDetailViewController.swift in Sources */,
 				2CC69FF7219A27F900173727 /* SearchViewController.swift in Sources */,

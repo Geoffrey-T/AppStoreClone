@@ -29,15 +29,15 @@ final class Transition: NSObject, UIViewControllerTransitioningDelegate {
         )
         return PresentCardAnimator(params: params)
     }
-//
-//    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        let params = DismissCardAnimator.Params.init(
-//            fromCardFrame: self.params.fromCardFrame,
-//            fromCardFrameWithoutTransform: self.params.fromCardFrameWithoutTransform,
-//            fromCell: self.params.fromCell
-//        )
-//        return DismissCardAnimator(params: params)
-//    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let params = DismissCardAnimator.Params.init(
+            fromCardFrame: self.params.fromCardFrame,
+            fromCardFrameWithoutTransform: self.params.fromCardFrameWithoutTransform,
+            fromCell: self.params.fromCell
+        )
+        return DismissCardAnimator(params: params)
+    }
 
     func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return nil
