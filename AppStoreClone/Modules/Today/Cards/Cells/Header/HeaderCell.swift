@@ -8,12 +8,7 @@
 
 import UIKit
 
-class HeaderCell: UICollectionReusableView {
 
+class HeaderCell: UICollectionReusableView {
     @IBOutlet weak var headerView: HeaderView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
 }

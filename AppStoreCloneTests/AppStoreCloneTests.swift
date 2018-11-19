@@ -39,4 +39,24 @@ class AppStoreCloneTests: XCTestCase {
             print("timeout")
         }
     }
+
+    func testGetTopCategoryInfo() {
+        let client = ApptweakClient(token: "mq0mYVBzALIaZKCpbxlamir-mp0")
+
+        let expectation = self.expectation(description: "Top Category Request")
+
+        client.get(TopCategoryRequest(), completion: { response in
+            switch response {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+            expectation.fulfill()
+        })
+
+        waitForExpectations(timeout: 10) { _ in
+            print("timeout")
+        }
+    }
 }

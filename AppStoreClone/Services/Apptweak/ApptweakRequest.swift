@@ -20,3 +20,19 @@ public struct AppInfoRequest: Request {
         self.appId = appId
     }
 }
+
+public struct TopCategoryRequest: Request {
+    public typealias Response = [Store]
+
+    public var endpointName: String{
+        return "/ios/categories/6003/top.json?country=fr&language=\(language)&device=\(device)&type=grossing"
+    }
+
+    private let language: String
+    private let device: String
+
+    public init(language: String = "fr", device: String = "iphone") {
+        self.device = device
+        self.language = language
+    }
+}

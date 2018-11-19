@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct HeaderInformations {
+public struct HeaderModel {
     let subject: String = "<Subject>"
     let title: String = "<Title>"
     let rightImage: UIImage? = nil
@@ -20,12 +20,12 @@ class HeaderView: UIView {
         static let nibName = String(describing: HeaderView.self)
     }
 
-    public var headerInformations: HeaderInformations? {
+    public var headerModel: HeaderModel? {
         didSet {
-            subjectLabel.text = headerInformations?.subject
-            titleLabel.text = headerInformations?.title
+            subjectLabel.text = headerModel?.subject
+            titleLabel.text = headerModel?.title
 
-            guard let image = headerInformations?.rightImage else {
+            guard let image = headerModel?.rightImage else {
                 rightImageView.isHidden = true
                 return
             }
@@ -34,6 +34,7 @@ class HeaderView: UIView {
             rightImageView.isHidden = false
         }
     }
+    
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rightImageView: UIImageView!

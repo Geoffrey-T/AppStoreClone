@@ -49,18 +49,22 @@ public struct Developer: Decodable {
 }
 
 public struct Store: Decodable {
-    public let versions: [Version]
+    public let id: Int?
+    public let developer: String?
+    public let versions: [Version]?
     public let icon: URL
-    public let genres: [Int]
+    public let genres: [Int?]
     public let title: String
     public let slug: String
-    public let description: String
+    public let description: String?
     public let price: String
-    public let features: Features
-    public let devices: [String] //TODO : enum?
+    public let features: Features?
+    public let devices: [String]? //TODO : enum?
 
 
     enum CodingKeys: String, CodingKey {
+        case id
+        case developer
         case versions
         case icon
         case genres
@@ -96,4 +100,3 @@ public struct Features: Decodable {
         case inApps = "in_apps"
     }
 }
-
