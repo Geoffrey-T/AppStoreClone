@@ -21,6 +21,12 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
             return margin * 2
         }
 
+        struct header {
+            static let identifier = "HeaderCell"
+            static let xib = String(describing: HeaderCell.self)
+            static let height: CGFloat = 80.0
+        }
+
         struct articleCard {
             static let identifier = "ArticleCardCell"
             static let xib = String(describing: ArticleCardCell.self)
@@ -42,6 +48,10 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
     private func registerCells() {
         collectionView?.register(nibName: Cell.articleCard.xib, forCellWithReuseIdentifier: Cell.articleCard.identifier)
         collectionView?.register(nibName: Cell.appCard.xib, forCellWithReuseIdentifier: Cell.appCard.identifier)
+
+        collectionView?.register(UINib(nibName: Cell.header.xib, bundle: nil),
+                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                 withReuseIdentifier: Cell.header.identifier)
     }
     
     // MARK: - UICollectionViewDataSource
@@ -99,5 +109,28 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
         if let cell = collectionView.cellForItem(at: indexPath) as? BaseCardCell {
             delegate?.cardSelected(cell: cell)
         }
+    }
+
+    // Mark: - Header
+
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                             withReuseIdentifier: Cell.header.identifier,
+                                                                             for: indexPath)
+            // TODO: Setup header
+            return headerView
+
+        default: break
+        }
+
+        return UICollectionReusableView()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: Cell.header.height)
     }
 }

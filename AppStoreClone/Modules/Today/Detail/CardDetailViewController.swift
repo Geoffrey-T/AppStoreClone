@@ -17,4 +17,9 @@ class CardDetailViewController: UIViewController {
     @IBAction func closeTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        modalPresentationCapturesStatusBarAppearance = true
+    }
 }

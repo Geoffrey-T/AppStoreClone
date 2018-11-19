@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderCell" id="U6b-Vx-4bR" customClass="HeaderCell" customModule="AppStoreClone" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYB-UI-ghk" customClass="HeaderView" customModule="AppStoreClone" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="wYB-UI-ghk" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="7nq-QG-h90"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="wYB-UI-ghk" secondAttribute="trailing" id="WmG-mc-8m9"/>
+                <constraint firstAttribute="bottom" secondItem="wYB-UI-ghk" secondAttribute="bottom" id="XfI-eH-woq"/>
+                <constraint firstItem="wYB-UI-ghk" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="cSW-Mp-OQf"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="headerView" destination="wYB-UI-ghk" id="RUS-1Q-NfN"/>
+            </connections>
+        </collectionReusableView>
+    </objects>
+</document>

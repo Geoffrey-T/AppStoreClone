@@ -38,6 +38,8 @@
 		8F282AF3219B3ADA004FFE6A /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F282AF2219B3ADA004FFE6A /* HeaderView.xib */; };
 		8F282AF5219B61CA004FFE6A /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F282AF4219B61CA004FFE6A /* CardDetailViewController.swift */; };
 		8F3C03C521A1FDF300F8F1DD /* DismissCardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C03C421A1FDF300F8F1DD /* DismissCardAnimator.swift */; };
+		8F571C7C21A3588700015F7F /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F571C7A21A3588700015F7F /* HeaderCell.swift */; };
+		8F571C7D21A3588700015F7F /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F571C7B21A3588700015F7F /* HeaderCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		8F282AF2219B3ADA004FFE6A /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		8F282AF4219B61CA004FFE6A /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
 		8F3C03C421A1FDF300F8F1DD /* DismissCardAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissCardAnimator.swift; sourceTree = "<group>"; };
+		8F571C7A21A3588700015F7F /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		8F571C7B21A3588700015F7F /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +253,7 @@
 		2CC69FFF219A31C300173727 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8F571C7121A354AA00015F7F /* Header */,
 				8F196659219B9AB100A0D0C7 /* ContentCard */,
 				2CC6A004219A31EF00173727 /* BaseCard */,
 				2CC6A00A219A32AF00173727 /* AppCard */,
@@ -327,6 +332,15 @@
 			children = (
 				8F282AEF219B391C004FFE6A /* HeaderView.swift */,
 				8F282AF2219B3ADA004FFE6A /* HeaderView.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		8F571C7121A354AA00015F7F /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				8F571C7A21A3588700015F7F /* HeaderCell.swift */,
+				8F571C7B21A3588700015F7F /* HeaderCell.xib */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -412,6 +426,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F571C7D21A3588700015F7F /* HeaderCell.xib in Resources */,
 				2CC6A012219A349200173727 /* ArticleCardCell.xib in Resources */,
 				2CC69FD3219A174700173727 /* LaunchScreen.storyboard in Resources */,
 				8F19665D219B9B2A00A0D0C7 /* ContentCardView.xib in Resources */,
@@ -440,6 +455,7 @@
 				2CC6A00D219A32D100173727 /* AppCardCell.swift in Sources */,
 				8F196656219B824500A0D0C7 /* CardPresentationController.swift in Sources */,
 				2CC69FF1219A27CE00173727 /* GamesViewController.swift in Sources */,
+				8F571C7C21A3588700015F7F /* HeaderCell.swift in Sources */,
 				2CC6A007219A321100173727 /* BaseCardCell.swift in Sources */,
 				8F196652219B7E9600A0D0C7 /* PresentCardAnimator.swift in Sources */,
 				8F19664F219B7B9600A0D0C7 /* Transition.swift in Sources */,
