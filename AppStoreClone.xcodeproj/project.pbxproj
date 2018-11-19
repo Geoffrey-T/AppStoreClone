@@ -40,6 +40,7 @@
 		8F3C03C521A1FDF300F8F1DD /* DismissCardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3C03C421A1FDF300F8F1DD /* DismissCardAnimator.swift */; };
 		8F571C7C21A3588700015F7F /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F571C7A21A3588700015F7F /* HeaderCell.swift */; };
 		8F571C7D21A3588700015F7F /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F571C7B21A3588700015F7F /* HeaderCell.xib */; };
+		8F571C7F21A368B000015F7F /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F571C7E21A368B000015F7F /* UIImage+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		8F3C03C421A1FDF300F8F1DD /* DismissCardAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissCardAnimator.swift; sourceTree = "<group>"; };
 		8F571C7A21A3588700015F7F /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		8F571C7B21A3588700015F7F /* HeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = "<group>"; };
+		8F571C7E21A368B000015F7F /* UIImage+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			children = (
 				2CC6A013219A3CA700173727 /* CollectionView+extension.swift */,
 				8F196653219B806F00A0D0C7 /* UIView+extension.swift */,
+				8F571C7E21A368B000015F7F /* UIImage+extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				2CC6A011219A349200173727 /* ArticleCardCell.swift in Sources */,
 				8F282AF0219B391C004FFE6A /* HeaderView.swift in Sources */,
 				2CC69FF5219A27E700173727 /* UpdatesViewController.swift in Sources */,
+				8F571C7F21A368B000015F7F /* UIImage+extension.swift in Sources */,
 				8F19665B219B9ACA00A0D0C7 /* ContentCardView.swift in Sources */,
 				2CC6A014219A3CA700173727 /* CollectionView+extension.swift in Sources */,
 				8F282AE8219AC9E0004FFE6A /* ApptweakClient.swift in Sources */,

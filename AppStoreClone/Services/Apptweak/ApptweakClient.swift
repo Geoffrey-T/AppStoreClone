@@ -49,7 +49,7 @@ class ApptweakClient {
 
     private let token: String
 
-    public init(token: String) {
+    public init(token: String = "mq0mYVBzALIaZKCpbxlamir-mp0") { // TODO: Move to configuration file
         self.token = token
     }
 

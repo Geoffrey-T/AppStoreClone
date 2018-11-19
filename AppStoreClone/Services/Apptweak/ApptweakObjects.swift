@@ -52,7 +52,7 @@ public struct Store: Decodable {
     public let id: Int?
     public let developer: String?
     public let versions: [Version]?
-    public let icon: URL
+    public let icon: String
     public let genres: [Int?]
     public let title: String
     public let slug: String

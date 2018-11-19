@@ -37,6 +37,12 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
         }
     }
 
+    public var cards: [ContentCardModel]? {
+        didSet {
+            collectionView?.reloadData()
+        }
+    }
+
     public weak var delegate: CardCollectionDelegate?
 
     override func viewDidLoad() {
@@ -61,7 +67,7 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return cards?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -69,7 +75,11 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
                                                                              for: indexPath) as? AppCardCell else {
             fatalError("Unknow reusable cell!") // Should never happened
         }
-        
+
+        if let cardModel = cards?[indexPath.row] {
+            cell.containerView.contentCardModel = cardModel
+        }
+
         return cell
     }
     

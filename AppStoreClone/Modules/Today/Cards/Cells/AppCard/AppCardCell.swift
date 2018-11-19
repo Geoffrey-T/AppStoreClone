@@ -9,13 +9,8 @@
 import UIKit
 
 class AppCardCell: BaseCardCell {
-    @IBOutlet weak var subjectLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
 
-    @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var descriptionLabel: UILabel!
-
-    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var containerView: ContentCardView!
 
 
     override func awakeFromNib() {

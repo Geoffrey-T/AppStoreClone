@@ -8,6 +8,13 @@
 
 import UIKit
 
+struct ContentCardModel {
+    let subject: String
+    let title: String
+    let backgroundImage: String
+    let description: String
+}
+
 class ContentCardView: UIView {
 
     @IBOutlet weak var subjectLabel: UILabel!
@@ -15,6 +22,15 @@ class ContentCardView: UIView {
 
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
+
+    public var contentCardModel: ContentCardModel? {
+        didSet {
+            subjectLabel.text = contentCardModel?.subject
+            titleLabel.text = contentCardModel?.title
+            backgroundImage.downloaded(from: contentCardModel?.backgroundImage)
+            descriptionLabel.text = contentCardModel?.description
+        }
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

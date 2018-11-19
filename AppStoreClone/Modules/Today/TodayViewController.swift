@@ -20,6 +20,8 @@ class TodayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        apptweakTopCategories()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,6 +29,17 @@ class TodayViewController: UIViewController {
             cardCollectionViewController = segue.destination as? CardCollectionViewController
             cardCollectionViewController?.delegate = self
         }
+    }
+
+    private func apptweakTopCategories() {
+        ApptweakClient().get(TopCategoryRequest(), completion: { response in
+            switch response {
+            case .success(let storeApps):
+                self.cardCollectionViewController?.cards = storeApps.contentCardModels
+            case .failure(let error):
+                print(error)
+            }
+        })
     }
 }
 
@@ -66,5 +79,14 @@ extension TodayViewController: CardCollectionDelegate {
         present(detailVc, animated: true, completion: { [unowned cell] in
             cell.unfreezeAnimations()
         })
+    }
+}
+
+extension Array where Element == Store {
+    var contentCardModels: [ContentCardModel] {
+        return compactMap { ContentCardModel(subject: $0.slug,
+                                             title: $0.title,
+                                             backgroundImage: $0.icon,
+                                             description: $0.description ?? "") }
     }
 }
