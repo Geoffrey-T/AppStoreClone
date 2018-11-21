@@ -18,7 +18,7 @@ class BaseCardCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.white
     }
 
     override func layoutSubviews() {
@@ -48,5 +48,39 @@ class BaseCardCell: UICollectionViewCell {
 
     func unfreezeAnimations() {
         disabledHighlightedAnimation = false
+    }
+    
+    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+
+        if let touch = touches.first {
+            let location = touch.location(in: self)
+            if isOutside(location: location) {
+                resetAnimation()
+            } else {
+                let rate = touch.force / touch.maximumPossibleForce
+                let scaling = 1.0 - (rate / 6)
+                print(scaling)
+                UIView.animate(withDuration: 0.15) {
+                    self.transform = CGAffineTransform(scaleX: scaling, y: scaling)
+                }
+            }
+        }
+    }
+
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        resetAnimation()
+    }
+
+    private func resetAnimation() {
+        UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2.0, options: [], animations: {
+            self.transform = .identity
+        })
+    }
+
+    private func isOutside(location: CGPoint) -> Bool {
+        return location.x > bounds.maxX || location.x < 0
+            || location.y > bounds.maxY || location.y < 0
     }
 }
