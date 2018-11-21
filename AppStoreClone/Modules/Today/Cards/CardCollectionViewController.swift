@@ -39,7 +39,9 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
 
     public var cards: [ContentCardModel]? {
         didSet {
-            collectionView?.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView?.reloadData()
+            }
         }
     }
 
