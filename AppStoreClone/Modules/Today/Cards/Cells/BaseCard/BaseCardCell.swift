@@ -49,7 +49,7 @@ class BaseCardCell: UICollectionViewCell {
     func unfreezeAnimations() {
         disabledHighlightedAnimation = false
     }
-    
+
     open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesMoved(touches, with: event)
 
@@ -60,7 +60,6 @@ class BaseCardCell: UICollectionViewCell {
             } else {
                 let rate = touch.force / touch.maximumPossibleForce
                 let scaling = 1.0 - (rate / 6)
-                print(scaling)
                 UIView.animate(withDuration: 0.15) {
                     self.transform = CGAffineTransform(scaleX: scaling, y: scaling)
                 }
