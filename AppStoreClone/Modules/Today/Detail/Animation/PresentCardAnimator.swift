@@ -109,7 +109,7 @@ class PresentCardTransitionDriver {
             }()
             let cardConstraints = [
                 verticalAnchor,
-                cardDetailView.centerXAnchor.constraint(equalTo: animatedContainerView.centerXAnchor),
+                cardDetailView.centerXAnchor.constraint(equalTo: animatedContainerView.centerXAnchor)
             ]
             NSLayoutConstraint.activate(cardConstraints)
         }

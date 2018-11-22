@@ -12,7 +12,6 @@ class AppCardCell: BaseCardCell {
 
     @IBOutlet weak var containerView: ContentCardView!
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

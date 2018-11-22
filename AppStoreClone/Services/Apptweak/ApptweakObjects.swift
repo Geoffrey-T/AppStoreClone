@@ -61,7 +61,6 @@ public struct Store: Decodable {
     public let features: Features?
     public let devices: [String]? //TODO : enum?
 
-
     enum CodingKeys: String, CodingKey {
         case id
         case developer

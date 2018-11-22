@@ -39,7 +39,7 @@ final class DismissCardAnimator: NSObject, UIViewControllerAnimatedTransitioning
             let cardDetailView = ctx.view(forKey: .from) else {
             return // TODO: Exception
         }
-        
+
         let container = ctx.containerView
 
         let animatedContainerView = UIView()

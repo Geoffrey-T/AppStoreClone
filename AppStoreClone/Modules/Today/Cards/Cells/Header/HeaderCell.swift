@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class HeaderCell: UICollectionReusableView {
     @IBOutlet weak var headerView: HeaderView!
 }

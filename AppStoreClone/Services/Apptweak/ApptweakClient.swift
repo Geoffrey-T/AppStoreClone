@@ -95,7 +95,6 @@ class ApptweakClient {
 
         var urlComponent = URLComponents(url: baseUrl, resolvingAgainstBaseURL: true)
 
-
         let parameters = [
             "country": "fr",
             "language": "fr",

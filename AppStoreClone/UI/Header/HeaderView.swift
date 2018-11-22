@@ -29,19 +29,18 @@ class HeaderView: UIView {
                 rightImageView.isHidden = true
                 return
             }
-            
+
             rightImageView.image = image
             rightImageView.isHidden = false
         }
     }
-    
+
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var rightImageView: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-
 
         guard let view = loadViewFromNib() else {
             return // TODO: Handle error

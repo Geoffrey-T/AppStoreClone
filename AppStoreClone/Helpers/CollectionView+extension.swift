@@ -9,9 +9,9 @@
 import UIKit
 
 extension UICollectionView {
-    
+
     // MARK: - CollectionViewCell Registration -
-    
+
     func register(nibName name: String, forCellWithReuseIdentifier identifier: String? = nil, bundle: Bundle? = nil) {
         let nib = UINib(nibName: name, bundle: bundle)
         self.register(nib, forCellWithReuseIdentifier: identifier ?? name)

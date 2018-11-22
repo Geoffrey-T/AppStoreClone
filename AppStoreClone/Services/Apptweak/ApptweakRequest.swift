@@ -24,7 +24,7 @@ public struct AppInfoRequest: Request {
 public struct TopCategoryRequest: Request {
     public typealias Response = [Store]
 
-    public var endpointName: String{
+    public var endpointName: String {
         return "/ios/categories/6003/top.json?country=fr&language=\(language)&device=\(device)&type=grossing"
     }
 
