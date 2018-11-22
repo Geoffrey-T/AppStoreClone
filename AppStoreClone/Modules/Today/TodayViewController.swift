@@ -44,7 +44,7 @@ class TodayViewController: UIViewController {
 }
 
 extension TodayViewController: CardCollectionDelegate {
-    func cardSelected(cell: BaseCardCell) {
+    func cardSelected(cell: AppCardCell) {
         cell.freezeAnimations()
 
         let currentCellFrame = cell.layer.presentation()!.frame
@@ -63,9 +63,8 @@ extension TodayViewController: CardCollectionDelegate {
             return cell.superview!.convert(r, to: nil)
         }()
 
-        //let cardModel = cardModels[indexPath.row]
-
         let detailVc = storyboard!.instantiateViewController(withIdentifier: "cardDetailVc") as! CardDetailViewController
+        detailVc.contentCardModel = cell.containerView?.contentCardModel
 
         let params = Transition.Params(fromCardFrame: cardPresentationFrameOnScreen,
                                        fromCardFrameWithoutTransform: cardFrameWithoutTransform,

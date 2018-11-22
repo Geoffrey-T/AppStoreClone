@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleCardCell: BaseCardCell {
+class GetAppCardCell: AppCardCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

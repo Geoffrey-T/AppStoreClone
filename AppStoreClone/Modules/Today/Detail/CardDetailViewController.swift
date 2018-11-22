@@ -14,6 +14,9 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
 
     @IBOutlet weak var bottomAreaConstraint: NSLayoutConstraint!
+
+    public var contentCardModel: ContentCardModel?
+
     @IBAction func closeTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -21,5 +24,6 @@ class CardDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         modalPresentationCapturesStatusBarAppearance = true
+        contentCardView.contentCardModel = contentCardModel
     }
 }

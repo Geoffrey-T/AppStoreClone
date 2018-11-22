@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CardCollectionDelegate: class {
-    func cardSelected(cell: BaseCardCell)
+    func cardSelected(cell: AppCardCell)
 }
 
 class CardCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -28,8 +28,8 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
         }
 
         struct articleCard {
-            static let identifier = "ArticleCardCell"
-            static let xib = String(describing: ArticleCardCell.self)
+            static let identifier = "GetAppCardCell"
+            static let xib = String(describing: GetAppCardCell.self)
         }
         struct appCard {
             static let identifier = "AppCardCell"
@@ -49,10 +49,10 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         registerCells()
     }
-    
+
     private func registerCells() {
         collectionView?.register(nibName: Cell.articleCard.xib, forCellWithReuseIdentifier: Cell.articleCard.identifier)
         collectionView?.register(nibName: Cell.appCard.xib, forCellWithReuseIdentifier: Cell.appCard.identifier)
@@ -61,15 +61,16 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
                                  forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                  withReuseIdentifier: Cell.header.identifier)
     }
-    
+
     // MARK: - UICollectionViewDataSource
-    
+
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cards?.count ?? 0
+        //return 3
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -84,41 +85,42 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
 
         return cell
     }
-    
-    
+
     // MARK: - UICollectionViewDelegateFlowLayout
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
+    }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return cellWidth(index: indexPath.item)
     }
-    
+
     private func cellWidth(index: Int) -> CGSize {
         guard UIDevice.current.userInterfaceIdiom != .phone else {
             return CGSize(width: collectionView.bounds.width - Cell.totalMargin, height: Cell.height)
         }
-        
+
         let rowIsPair = ((index / 2) % 2) > 0
         let isFirst = (index+1) % 2 > 0
-        
+
         let width = (!rowIsPair && isFirst) || (rowIsPair && !isFirst) ? cardCellWidth() : condensedCardCellWidth()
 
         return CGSize(width: width, height: Cell.height)
     }
-    
+
     private func cardCellWidth() -> CGFloat {
         return ((collectionView.bounds.width / 3) * 2) - Cell.totalMargin
     }
-    
+
     private func condensedCardCellWidth() -> CGFloat {
         return collectionView.bounds.width / 3  - Cell.totalMargin
     }
 
-
     // MARK: - UICollectionViewDelegate
-    
+
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? BaseCardCell {
+        if let cell = collectionView.cellForItem(at: indexPath) as? AppCardCell {
             delegate?.cardSelected(cell: cell)
         }
     }
@@ -127,7 +129,6 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
 
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
-
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,

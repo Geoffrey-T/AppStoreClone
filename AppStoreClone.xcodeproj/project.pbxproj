@@ -21,8 +21,8 @@
 		2CC6A007219A321100173727 /* BaseCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6A005219A321100173727 /* BaseCardCell.swift */; };
 		2CC6A00D219A32D100173727 /* AppCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6A00B219A32D100173727 /* AppCardCell.swift */; };
 		2CC6A00E219A32D100173727 /* AppCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6A00C219A32D100173727 /* AppCardCell.xib */; };
-		2CC6A011219A349200173727 /* ArticleCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6A00F219A349200173727 /* ArticleCardCell.swift */; };
-		2CC6A012219A349200173727 /* ArticleCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6A010219A349200173727 /* ArticleCardCell.xib */; };
+		2CC6A011219A349200173727 /* GetAppCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6A00F219A349200173727 /* GetAppCardCell.swift */; };
+		2CC6A012219A349200173727 /* GetAppCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC6A010219A349200173727 /* GetAppCardCell.xib */; };
 		2CC6A014219A3CA700173727 /* CollectionView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC6A013219A3CA700173727 /* CollectionView+extension.swift */; };
 		8F19664F219B7B9600A0D0C7 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F19664E219B7B9600A0D0C7 /* Transition.swift */; };
 		8F196652219B7E9600A0D0C7 /* PresentCardAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F196651219B7E9600A0D0C7 /* PresentCardAnimator.swift */; };
@@ -72,8 +72,8 @@
 		2CC6A005219A321100173727 /* BaseCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCardCell.swift; sourceTree = "<group>"; };
 		2CC6A00B219A32D100173727 /* AppCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCardCell.swift; sourceTree = "<group>"; };
 		2CC6A00C219A32D100173727 /* AppCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppCardCell.xib; sourceTree = "<group>"; };
-		2CC6A00F219A349200173727 /* ArticleCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardCell.swift; sourceTree = "<group>"; };
-		2CC6A010219A349200173727 /* ArticleCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCardCell.xib; sourceTree = "<group>"; };
+		2CC6A00F219A349200173727 /* GetAppCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppCardCell.swift; sourceTree = "<group>"; };
+		2CC6A010219A349200173727 /* GetAppCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetAppCardCell.xib; sourceTree = "<group>"; };
 		2CC6A013219A3CA700173727 /* CollectionView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+extension.swift"; sourceTree = "<group>"; };
 		8F19664E219B7B9600A0D0C7 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		8F196651219B7E9600A0D0C7 /* PresentCardAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentCardAnimator.swift; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 				8F196659219B9AB100A0D0C7 /* ContentCard */,
 				2CC6A004219A31EF00173727 /* BaseCard */,
 				2CC6A00A219A32AF00173727 /* AppCard */,
-				2CC6A009219A32A700173727 /* ArticleCard */,
+				2CC6A009219A32A700173727 /* GetAppCard */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -273,13 +273,13 @@
 			path = BaseCard;
 			sourceTree = "<group>";
 		};
-		2CC6A009219A32A700173727 /* ArticleCard */ = {
+		2CC6A009219A32A700173727 /* GetAppCard */ = {
 			isa = PBXGroup;
 			children = (
-				2CC6A00F219A349200173727 /* ArticleCardCell.swift */,
-				2CC6A010219A349200173727 /* ArticleCardCell.xib */,
+				2CC6A00F219A349200173727 /* GetAppCardCell.swift */,
+				2CC6A010219A349200173727 /* GetAppCardCell.xib */,
 			);
-			path = ArticleCard;
+			path = GetAppCard;
 			sourceTree = "<group>";
 		};
 		2CC6A00A219A32AF00173727 /* AppCard */ = {
@@ -430,7 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F571C7D21A3588700015F7F /* HeaderCell.xib in Resources */,
-				2CC6A012219A349200173727 /* ArticleCardCell.xib in Resources */,
+				2CC6A012219A349200173727 /* GetAppCardCell.xib in Resources */,
 				2CC69FD3219A174700173727 /* LaunchScreen.storyboard in Resources */,
 				8F19665D219B9B2A00A0D0C7 /* ContentCardView.xib in Resources */,
 				2CC69FD0219A174700173727 /* Assets.xcassets in Resources */,
@@ -471,7 +471,7 @@
 				8F196654219B806F00A0D0C7 /* UIView+extension.swift in Sources */,
 				2CC69FC9219A174600173727 /* AppDelegate.swift in Sources */,
 				2CC69FEB219A276500173727 /* TodayViewController.swift in Sources */,
-				2CC6A011219A349200173727 /* ArticleCardCell.swift in Sources */,
+				2CC6A011219A349200173727 /* GetAppCardCell.swift in Sources */,
 				8F282AF0219B391C004FFE6A /* HeaderView.swift in Sources */,
 				2CC69FF5219A27E700173727 /* UpdatesViewController.swift in Sources */,
 				8F571C7F21A368B000015F7F /* UIImage+extension.swift in Sources */,
