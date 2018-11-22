@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PresentCardAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+class PresentCardAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
     private let params: Params
 
@@ -63,13 +63,17 @@ final class PresentCardAnimator: NSObject, UIViewControllerAnimatedTransitioning
     }
 }
 
-final class PresentCardTransitionDriver {
+class PresentCardTransitionDriver {
     let animator: UIViewPropertyAnimator
     init(params: PresentCardAnimator.Params, transitionContext: UIViewControllerContextTransitioning, baseAnimator: UIViewPropertyAnimator) {
         let ctx = transitionContext
-        let container = ctx.containerView
+        guard let cardDetail = ctx.viewController(forKey: .to) as? CardDetailViewController,
+            let cardDetailView = ctx.view(forKey: .to) else {
+                animator = baseAnimator
+            return
+        }
 
-        let cardDetailView = ctx.view(forKey: .to)!
+        let container = ctx.containerView
         let fromCardFrame = params.fromCardFrame
 
         // Temporary container view for animation
@@ -99,8 +103,6 @@ final class PresentCardTransitionDriver {
         animatedContainerView.addSubview(cardDetailView)
         cardDetailView.translatesAutoresizingMaskIntoConstraints = false
 
-        let weirdCardToAnimatedContainerTopAnchor: NSLayoutConstraint
-
         do {
             let verticalAnchor: NSLayoutConstraint = {
                 return cardDetailView.centerYAnchor.constraint(equalTo: animatedContainerView.centerYAnchor)
@@ -115,6 +117,7 @@ final class PresentCardTransitionDriver {
         let cardHeightConstraint = cardDetailView.heightAnchor.constraint(equalToConstant: fromCardFrame.height)
         NSLayoutConstraint.activate([cardWidthConstraint, cardHeightConstraint])
 
+        //
         cardDetailView.layer.cornerRadius = 20
 
         params.fromCell.isHidden = true
@@ -130,7 +133,9 @@ final class PresentCardTransitionDriver {
         func animateCardDetailViewSizing() {
             cardWidthConstraint.constant = animatedContainerView.bounds.width
             cardHeightConstraint.constant = animatedContainerView.bounds.height
-            cardDetailView.layer.cornerRadius = 0
+
+            cardDetail.contentCardView.layer.cornerRadius = 0
+
             container.layoutIfNeeded()
         }
 

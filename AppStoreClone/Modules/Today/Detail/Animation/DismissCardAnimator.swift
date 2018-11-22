@@ -35,7 +35,8 @@ final class DismissCardAnimator: NSObject, UIViewControllerAnimatedTransitioning
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let ctx = transitionContext
 
-        guard let cardDetail = ctx.viewController(forKey: .from)! as? CardDetailViewController else {
+        guard let cardDetail = ctx.viewController(forKey: .from)! as? CardDetailViewController,
+            let cardDetailView = ctx.view(forKey: .from) else {
             return // TODO: Exception
         }
 
@@ -47,7 +48,7 @@ final class DismissCardAnimator: NSObject, UIViewControllerAnimatedTransitioning
 //            ctx.viewController(forKey: .to)! as! HomeViewController
 //        )
 
-        let cardDetailView = ctx.view(forKey: .from)!
+
 
         let animatedContainerView = UIView()
 //        if GlobalConstants.isEnabledDebugAnimatingViews {
@@ -77,6 +78,8 @@ final class DismissCardAnimator: NSObject, UIViewControllerAnimatedTransitioning
         // Fix weird top inset
 //        let topTemporaryFix = screens.cardDetail.cardContentView.topAnchor.constraint(equalTo: cardDetailView.topAnchor)
 //        topTemporaryFix.isActive = GlobalConstants.isEnabledWeirdTopInsetsFix
+
+        cardDetail.contentCardView.layer.cornerRadius = 20
 
         container.layoutIfNeeded()
 
@@ -125,9 +128,5 @@ final class DismissCardAnimator: NSObject, UIViewControllerAnimatedTransitioning
         }) { (finished) in
             completeEverything()
         }
-
-//        UIView.animate(withDuration: transitionDuration(using: ctx) * 0.6) {
-//            cardDetail.scrollView.contentOffset = .zero
-//        }
     }
 }

@@ -296,8 +296,8 @@
 			children = (
 				8F19664E219B7B9600A0D0C7 /* Transition.swift */,
 				8F196651219B7E9600A0D0C7 /* PresentCardAnimator.swift */,
-				8F196655219B824500A0D0C7 /* CardPresentationController.swift */,
 				8F3C03C421A1FDF300F8F1DD /* DismissCardAnimator.swift */,
+				8F196655219B824500A0D0C7 /* CardPresentationController.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";

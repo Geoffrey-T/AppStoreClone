@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class Transition: NSObject, UIViewControllerTransitioningDelegate {
+class Transition: NSObject, UIViewControllerTransitioningDelegate {
     struct Params {
         let fromCardFrame: CGRect
         let fromCardFrameWithoutTransform: CGRect
