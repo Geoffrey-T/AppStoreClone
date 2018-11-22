@@ -110,14 +110,13 @@ class PresentCardTransitionDriver {
             let cardConstraints = [
                 verticalAnchor,
                 cardDetailView.centerXAnchor.constraint(equalTo: animatedContainerView.centerXAnchor),
-                ]
+            ]
             NSLayoutConstraint.activate(cardConstraints)
         }
         let cardWidthConstraint = cardDetailView.widthAnchor.constraint(equalToConstant: fromCardFrame.width)
         let cardHeightConstraint = cardDetailView.heightAnchor.constraint(equalToConstant: fromCardFrame.height)
         NSLayoutConstraint.activate([cardWidthConstraint, cardHeightConstraint])
 
-        //
         cardDetailView.layer.cornerRadius = 20
 
         params.fromCell.isHidden = true
