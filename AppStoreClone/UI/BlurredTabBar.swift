@@ -13,7 +13,7 @@ class BlurredTabBar: UITabBar {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        let blurredMask = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        let blurredMask = UIVisualEffectView(effect: UIBlurEffect(style: .extraLight))
         blurredMask.frame = bounds
         blurredMask.autoresizingMask = .flexibleWidth
         insertSubview(blurredMask, at: 0)

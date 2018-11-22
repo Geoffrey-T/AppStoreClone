@@ -59,8 +59,8 @@ class BaseCardCell: UICollectionViewCell {
                 resetAnimation()
             } else {
                 let rate = touch.force / touch.maximumPossibleForce
-                let scaling = 1.0 - (rate / 6)
-                UIView.animate(withDuration: 0.15) {
+                let scaling = 1.0 - (rate / 8)
+                UIView.animate(withDuration: 0.25) {
                     self.transform = CGAffineTransform(scaleX: scaling, y: scaling)
                 }
             }
@@ -73,7 +73,7 @@ class BaseCardCell: UICollectionViewCell {
     }
 
     private func resetAnimation() {
-        UIView.animate(withDuration: 0.2, delay: 0.0, usingSpringWithDamping: 0.4, initialSpringVelocity: 2.0, options: [], animations: {
+        UIView.animate(withDuration: 0.25, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: [], animations: {
             self.transform = .identity
         })
     }
